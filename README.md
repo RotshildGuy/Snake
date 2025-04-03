@@ -46,7 +46,7 @@ Use the Right arrow key to move the snake right.
 ## Features
 **Score Display**: The current score is displayed at the top of the game screen.
 
-**Auto Play**: The game includes an auto play mode where the snake is controlled by an AI. The AI uses a pathfinding algorithm to find the food.
+**Auto Play**: The game includes an auto play mode where the snake is controlled by the computer. The computer uses a pathfinding algorithm to find the food.
 
 **Path Visualization**: When auto play is enabled, the calculated path to the food is displayed as a semi-transparent yellow line.
 
