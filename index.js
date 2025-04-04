@@ -71,7 +71,11 @@ function draw() {
         ctx.fillStyle = "#DC2626";
         ctx.font = "30px 'Press Start 2P', sans-serif";
         ctx.textAlign = "center";
-        if (score == 399) ctx.fillText("You Won!", canvas.width / 2, canvas.height / 2);
+        if (score == 399) {
+            if (autoPlay) ctx.fillText("Computer Won", canvas.width / 2, canvas.height / 2);
+            else ctx.fillText("You Won!", canvas.width / 2, canvas.height / 2);
+            autoPlay = false;
+        }
         else ctx.fillText("Game Over", canvas.width / 2, canvas.height / 2);
     }
     if (autoPlay && path.length > 0) {
@@ -140,11 +144,10 @@ function update() {
             clearInterval(intervalId);
             draw();
 
-            if(score > bestScore){
+            if(!autoPlay && score > bestScore){
                 bestScore = score;
                 bestScoreDisplay.textContent = "Best Score: " + bestScore;
             }
-            autoPlay = false;
             autoPlayButton.textContent = "Auto Play";
             return;
         }
