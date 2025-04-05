@@ -46,7 +46,10 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = i === 0 ? "#A7F3D0" : "#34D399";
+        let decimal = Math.floor(255 * (i / 400));
+        let hexa = decimal.toString(16);
+        if (hexa.length === 1) hexa = "0" + hexa;
+        ctx.fillStyle = "#0000" + hexa;
         ctx.fillRect(
             snake[i].x * gridSize,
             snake[i].y * gridSize,
